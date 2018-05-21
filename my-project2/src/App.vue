@@ -65,7 +65,7 @@ body{
   -webkit-font-smoothing: antialiased;/*针对图标字体进行抗锯齿渲染。*/
   -moz-osx-font-smoothing: grayscale;/*Firefox implements a similar property, but with different values: -moz-osx-font-smoothing. It only works on Mac OS X/macOS.*/
   text-align: center;
-  color: #ff0000;
+  color: #0879eb;
   margin-top: 20px;
 }
 </style>

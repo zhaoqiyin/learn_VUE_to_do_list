@@ -8,11 +8,13 @@
         {{item.label}}
     </li>
     </ul>
+    <component-a msgfromfather='you win!'></component-a>
   </div>
 </template>
 
 <script>
 import Store from './store'
+import ComponentA from './components/componentA'
 console.log(Store)
 export default {
   data: function () {
@@ -22,6 +24,7 @@ export default {
       newItem: ''
     }
   },
+  components: { ComponentA },
   watch: {
     items: {
       handler: function (items) {

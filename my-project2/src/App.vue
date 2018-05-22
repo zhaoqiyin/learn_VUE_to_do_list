@@ -8,7 +8,8 @@
         {{item.label}}
     </li>
     </ul>
-    <component-a msgfromfather='you win!'></component-a>
+    <p>child tells me: {{ childWords }}</p>
+    <component-a msgfromfather='you win!' v-on:child-tell-me-somthing='listenToMyBoy'></component-a>
   </div>
 </template>
 
@@ -21,7 +22,8 @@ export default {
     return {
       title: 'this is a todo list',
       items: Store.fetch(),
-      newItem: ''
+      newItem: '',
+      childWords: ''
     }
   },
   components: { ComponentA },
@@ -41,10 +43,11 @@ export default {
       this.items.push({
         label: this.newItem,
         isFinished: false
-      }
-      )
+      })
       this.newItem = ''
-      Store.save()
+    },
+    listenToMyBoy: function (msg) {
+      this.childWords = msg
     }
   }
 }

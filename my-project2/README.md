@@ -1,6 +1,6 @@
 # test-vue
 
-> fisrt project for test
+> first project for test
 
 ## Build Setup
 

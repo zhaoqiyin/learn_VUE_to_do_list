@@ -16,7 +16,9 @@
 <script>
 import Store from './store'
 import ComponentA from './components/componentA'
-console.log(Store)
+// import HelloWorld from './components/helloworld'
+
+console.log(Store.fetch())
 export default {
   data: function () {
     return {
@@ -32,7 +34,7 @@ export default {
       handler: function (items) {
         Store.save(items)
       },
-      deep: true
+      deep: true // 深度监听
     }
   },
   methods: {
@@ -40,6 +42,9 @@ export default {
       item.isFinished = !item.isFinished
     },
     addNew: function () {
+      console.log(this.items)
+      console.log(this.newItem)
+      // var _this = this
       this.items.push({
         label: this.newItem,
         isFinished: false

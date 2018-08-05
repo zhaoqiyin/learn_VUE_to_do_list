@@ -43,7 +43,7 @@ export default {
     },
     addNew: function () {
       console.log(this.items)
-      console.log(this.newItem)
+      // console.log(this.newItem)
       // var _this = this
       this.items.push({
         label: this.newItem,

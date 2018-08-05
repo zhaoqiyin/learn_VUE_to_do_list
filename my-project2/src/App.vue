@@ -42,7 +42,7 @@ export default {
       item.isFinished = !item.isFinished
     },
     addNew: function () {
-      console.log(this.items)
+      // console.log(this.items)
       // console.log(this.newItem)
       // var _this = this
       this.items.push({

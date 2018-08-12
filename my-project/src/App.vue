@@ -11,6 +11,11 @@
     <p>child tells me: {{ childWords }}</p>
     <component-a msgfromfather='you win!' v-on:child-tell-me-somthing='listenToMyBoy'></component-a>
     <button-counter></button-counter>
+    <div :style= "{fontSize: postFontSize + 'em'}">
+    <blog-post title="父组件通过props向子组件传递数据" v-on:enlarge-text="postFontSize += 0.1"></blog-post>
+    <blog-post v-for="post in posts" v-bind:key="post.id" v-bind:title="post.title"
+      v-on:enlarge-text="postFontSize += $event"></blog-post>
+    </div>
   </div>
 </template>
 
@@ -19,6 +24,7 @@ import Store from './store'
 import ComponentA from './components/componentA'
 // import HelloWorld from './components/helloworld'
 import ButtonCounter from './components/buttonCounter'
+import BlogPost from './components/blogPost'
 
 console.log(Store.fetch())
 export default {
@@ -27,12 +33,19 @@ export default {
       title: 'this is a todo list',
       items: Store.fetch(),
       newItem: '',
-      childWords: ''
+      childWords: '',
+      posts: [
+        { id: 1, title: 'My journey with Vue' },
+        { id: 2, title: 'Blogging with Vue' },
+        { id: 3, title: 'Why Vue is so fun' }
+      ],
+      postFontSize: 1
     }
   },
   components: {
     ComponentA,
-    ButtonCounter
+    ButtonCounter,
+    BlogPost
   },
   watch: {
     items: {

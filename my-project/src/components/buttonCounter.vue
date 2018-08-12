@@ -1,6 +1,6 @@
 <template>
     <div>
-      <button v-on:click="count++">You clicked me {{ count }} times.</button>'
+      <button v-on:click="count++">You clicked me {{ count }} times.</button>
     </div>
 </template>
 

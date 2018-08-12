@@ -10,6 +10,7 @@
     </ul>
     <p>child tells me: {{ childWords }}</p>
     <component-a msgfromfather='you win!' v-on:child-tell-me-somthing='listenToMyBoy'></component-a>
+    <button-counter></button-counter>
   </div>
 </template>
 
@@ -17,6 +18,7 @@
 import Store from './store'
 import ComponentA from './components/componentA'
 // import HelloWorld from './components/helloworld'
+import ButtonCounter from './components/buttonCounter'
 
 console.log(Store.fetch())
 export default {
@@ -28,7 +30,10 @@ export default {
       childWords: ''
     }
   },
-  components: { ComponentA },
+  components: {
+    ComponentA,
+    ButtonCounter
+  },
   watch: {
     items: {
       handler: function (items) {
